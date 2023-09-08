@@ -409,7 +409,7 @@
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
     position: relative;
-    background-color: var(--section-background)
+    background-color: var(--section-background);
   }
   .gallery .container{
     display: grid;
@@ -448,6 +448,130 @@
   }
 
   /* end gallery */
+  /* start features */
+    .features{
+      padding-top: var(--main-padding-top);
+      padding-bottom: var(--main-padding-bottom);
+      position: relative;
+    }
+    .features .container{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .features .box{
+      text-align: center;
+      box-shadow: 10px 10px rgba(0, 0, 0, 0.027);
+    }
+    .features .container .image-holder{
+     position: relative;
+     overflow: hidden;
+     border-radius: 10px
+
+    }
+    .features .container .image-holder::before{
+      position: absolute;
+      content: "";
+      top: -1px;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      }
+      .features .container .quality .image-holder::before{
+        background-color: rgb(244 64 54 / 50%);
+        }
+      .features .container .time .image-holder::before{
+        background-color: rgb(0 150 136 / 50%);
+        }
+      .features .container .passion .image-holder::before{
+        background-color: rgb(3 169 244 / 50%);
+        }
+    .features .container .image-holder::after{
+      position: absolute;
+      content: "";
+      bottom: 0;
+      right: 0;
+      border-style: solid;
+      border-width:  0px 0px 170px 500px;
+      border-color: transparent transparent white  transparent;
+      transition: var(--transition-duration);    
+    }
+    .features .container .box:hover .image-holder::after{
+      border-width: 170px 500px 170px 0;
+    }
+    .features .container img{
+      max-width: 100%;
+    }
+    .features .container .box h2{
+      position: relative;
+      font-size: 32px;
+      width: fit-content;
+      margin: 20px auto;
+    }
+    .features .container .box h2::before{
+      position: absolute;
+      content: "";
+      height: 5px;
+      left: 10px;
+      width: calc(100% - 20px);
+      bottom: -20px;
+    }
+    .features .container .quality h2::before{
+      background-color: #f44036;
+    }
+    .features .container .time h2::before{
+      background-color: #009688;
+    }
+    .features .container .passion h2::before{
+      background-color: #03a9f4;
+    }
+    .features .container .box p{
+      padding: 20px;
+      line-height: 2;
+      color: #777;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .features .container .box a{
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      text-decoration: none;
+      font-weight: bold;
+      border: 3px solid;
+      padding: 10px 30px;
+      border-radius: 6px;
+      font-size: 20px;
+      transition: var(--transition-duration);
+    }
+    .features .container .quality a{
+      border-color: #f44036;
+      color: #f44036;
+      background: linear-gradient(to right, #f44036 50%, white 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+    }
+    .features .container .time a{
+      border-color: #009688;
+      color: #009688;
+      background: linear-gradient(to right, #009688 50%, white 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+    }
+    .features .container .passion a{
+      border-color: #03a9f4;
+      color: #03a9f4;
+      background: linear-gradient(to right, #03a9f4 50%, white 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+    }
+    .features .container .box:hover a{
+      background-position: left top;
+      color: white;
+      border-color: white;
+    }
+
+  /* end features */
   /* start animation */
   @keyframes up-to-down {
     0%,100%{
